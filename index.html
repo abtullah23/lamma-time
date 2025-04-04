@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لَمَّة تايم - مسابقات جماعية</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <h1>لَمَّة تايم</h1>
+            <p>موقع مسابقات جماعية ممتع!</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Section: Select Categories -->
+        <section class="categories" id="categories">
+            <div class="container">
+                <h2>اختر الأقسام</h2>
+                <p>اختر حتى 6 أقسام لبدء المسابقة:</p>
+                <div class="category-list">
+                    <label><input type="checkbox" value="general"> عام</label>
+                    <label><input type="checkbox" value="science"> علم</label>
+                    <label><input type="checkbox" value="history"> تاريخ</label>
+                    <label><input type="checkbox" value="sports"> رياضة</label>
+                    <label><input type="checkbox" value="entertainment"> ترفيه</label>
+                    <label><input type="checkbox" value="geography"> جغرافيا</label>
+                </div>
+                <button id="startQuiz">بدء المسابقة</button>
+            </div>
+        </section>
+
+        <!-- Section: Quiz -->
+        <section class="quiz" id="quiz" style="display: none;">
+            <div class="container">
+                <h2>المسابقة بدأت!</h2>
+                <div class="teams">
+                    <div class="team team1">
+                        <h3>فريق 1</h3>
+                        <p>النقاط: <span id="team1Score">0</span></p>
+                    </div>
+                    <div class="team team2">
+                        <h3>فريق 2</h3>
+                        <p>النقاط: <span id="team2Score">0</span></p>
+                    </div>
+                </div>
+                <div class="question-box">
+                    <h3 id="questionText">السؤال هنا</h3>
+                    <p>الصعوبة: <span id="questionDifficulty">سهل</span> | النقاط: <span id="questionPoints">10</span></p>
+                    <button id="nextQuestion">السؤال التالي</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 لَمَّة تايم. جميع الحقوق محفوظة لـ [اسمك أو شركتك].</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
