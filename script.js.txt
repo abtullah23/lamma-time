@@ -1,0 +1,51 @@
+// Questions Data
+const questions = [
+    { category: "general", text: "ما هي عاصمة فرنسا؟", difficulty: "سهل", points: 10 },
+    { category: "science", text: "ما هو العنصر الكيميائي الذي رمزه H؟", difficulty: "صعب", points: 30 },
+    { category: "history", text: "من هو أول رئيس للولايات المتحدة؟", difficulty: "متوسط", points: 20 },
+    { category: "sports", text: "كم عدد اللاعبين في فريق كرة القدم؟", difficulty: "سهل", points: 10 },
+    { category: "entertainment", text: "من هو مخرج فيلم 'إنception'؟", difficulty: "متوسط", points: 20 },
+    { category: "geography", text: "ما هي أكبر قارة في العالم؟", difficulty: "سهل", points: 10 }
+];
+
+let selectedCategories = [];
+let currentQuestionIndex = 0;
+
+// Event Listeners
+document.getElementById("startQuiz").addEventListener("click", startQuiz);
+document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
+
+// Functions
+function startQuiz() {
+    // Get selected categories
+    selectedCategories = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+    if (selectedCategories.length === 0 || selectedCategories.length > 6) {
+        alert("يرجى اختيار 1 إلى 6 أقسام!");
+        return;
+    }
+
+    // Show quiz section
+    document.getElementById("categories").style.display = "none";
+    document.getElementById("quiz").style.display = "block";
+
+    // Load first question
+    loadQuestion();
+}
+
+function loadQuestion() {
+    const filteredQuestions = questions.filter(q => selectedCategories.includes(q.category));
+    if (currentQuestionIndex >= filteredQuestions.length) {
+        alert("انتهت الأسئلة!");
+        return;
+    }
+
+    const question = filteredQuestions[currentQuestionIndex];
+    document.getElementById("questionText").textContent = question.text;
+    document.getElementById("questionDifficulty").textContent = question.difficulty;
+    document.getElementById("questionPoints").textContent = question.points;
+}
+
+function nextQuestion() {
+    currentQuestionIndex++;
+    loadQuestion();
+}
