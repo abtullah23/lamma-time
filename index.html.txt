@@ -29,6 +29,7 @@
                     <label><input type="checkbox" value="sports"> رياضة</label>
                     <label><input type="checkbox" value="entertainment"> ترفيه</label>
                     <label><input type="checkbox" value="geography"> جغرافيا</label>
+ <label><input type="checkbox" value="YOUTUBE"> يوتيوب</label>
                 </div>
                 <button id="startQuiz">بدء المسابقة</button>
             </div>
